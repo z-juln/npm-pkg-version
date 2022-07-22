@@ -1,7 +1,7 @@
 {
-  "name": "npmpkg-version",
-  "version": "1.0.0",
-  "description": "npmpkg-version",
+  "name": "@juln/npm-pkg-version",
+  "version": "1.0.2",
+  "description": "npm-pkg-version",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/z-juln/npmpkg-version.git"
+    "url": "git+https://github.com/z-juln/npm-pkg-version.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/z-juln/npmpkg-version/issues"
+    "url": "https://github.com/z-juln/npm-pkg-version/issues"
   },
-  "homepage": "https://github.com/z-juln/npmpkg-version#readme",
+  "homepage": "https://github.com/z-juln/npm-pkg-version#readme",
   "dependencies": {
     "axios": "^0.27.2"
   },
