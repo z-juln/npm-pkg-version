@@ -57,9 +57,10 @@ export const getLatestVersion = async (pkgName: string, opts?: {
   registryUrl?: string,
   npmTag?: string,
 }) => {
-  const { registryUrl, npmTag } = Object.assign(opts ?? {}, {
+  const { registryUrl, npmTag } = Object.assign({
     npmTag: 'latest',
-  });
+    registryUrl: 'https://registry.npmjs.org/',
+  }, opts ?? {});
 
   const pkgInfo = await getPkgInfo(pkgName, registryUrl);
 
