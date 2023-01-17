@@ -76,7 +76,7 @@ export const getVersions = async (pkgName: string, registryUrl?: string) => {
   return versions;
 };
 
-export const validatePkg = async (pkgName: string, version?: string, registryUrl?: string) => {
+export const validatePkg = async (pkgName: string, { version, registryUrl }: { version?: string, registryUrl?: string }) => {
   try {
     if (typeof version !== 'string') {
       await getPkgInfo(pkgName);
