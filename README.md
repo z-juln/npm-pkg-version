@@ -7,7 +7,7 @@
 ## use
 
 ```typescript
-import { getPkgInfo, getLatestVersion, getVersions } from '@juln/npm-pkg-version';
+import { getPkgInfo, getLatestVersion, getVersions, validatePkg } from '@juln/npm-pkg-version';
 import type { PkgInfo } from '@juln/npm-pkg-version';
 
 (async () => {
@@ -20,6 +20,7 @@ import type { PkgInfo } from '@juln/npm-pkg-version';
     }),
     // 第二个参数默认为'https://registry.npmjs.org/'
     versions: await getVersions('pkgName', 'https://registry.npmjs.org/'),
+    hasNpm: await validatePkg('pkgName', 'version', 'https://registry.npmjs.org/'),
   });
 })();
 ```

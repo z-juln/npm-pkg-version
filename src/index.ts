@@ -1,4 +1,5 @@
 import axios from 'axios';
+import semver from 'semver';
 
 export interface PkgInfo {
   _id: string;
@@ -73,4 +74,9 @@ export const getVersions = async (pkgName: string, registryUrl?: string) => {
 
   const versions = Object.keys(pkgInfo?.versions ?? []);
   return versions;
+};
+
+export const validatePkg = async (pkgName: string, version: string, registryUrl?: string) => {
+  const versions = await getVersions(pkgName, registryUrl);
+  return versions.some(v => semver.satisfies(version, v));
 };
