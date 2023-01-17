@@ -76,7 +76,16 @@ export const getVersions = async (pkgName: string, registryUrl?: string) => {
   return versions;
 };
 
-export const validatePkg = async (pkgName: string, version: string, registryUrl?: string) => {
-  const versions = await getVersions(pkgName, registryUrl);
-  return versions.some(v => semver.satisfies(version, v));
+export const validatePkg = async (pkgName: string, version?: string, registryUrl?: string) => {
+  try {
+    if (typeof version !== 'string') {
+      await getPkgInfo(pkgName);
+      return true;
+    } else {
+      const versions = await getVersions(pkgName, registryUrl);
+      return versions.some(v => semver.satisfies(version, v));
+    }
+  } catch {
+    return false;
+  }
 };

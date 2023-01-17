@@ -1,6 +1,6 @@
 {
   "name": "@juln/npm-pkg-version",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "npm-pkg-version",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
